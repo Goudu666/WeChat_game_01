@@ -1,0 +1,135 @@
+/* pages/index/index.wxss */
+.index-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx;
+}
+
+/* 游戏标题 */
+.game-title {
+  text-align: center;
+  margin-bottom: 80rpx;
+}
+
+.title-text {
+  display: block;
+  font-size: 64rpx;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20rpx;
+  text-shadow: 2rpx 2rpx 4rpx rgba(0, 0, 0, 0.8);
+}
+
+.subtitle-text {
+  display: block;
+  font-size: 32rpx;
+  color: #3cc51f;
+  text-shadow: 1rpx 1rpx 2rpx rgba(0, 0, 0, 0.8);
+}
+
+/* 开始游戏按钮 */
+.start-section {
+  margin-bottom: 80rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 30rpx;
+  width: 100%;
+  max-width: 400rpx;
+}
+
+.start-btn {
+  background: linear-gradient(135deg, #3cc51f 0%, #2ecc71 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 15rpx;
+  padding: 30rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  box-shadow: 0 8rpx 16rpx rgba(60, 197, 31, 0.3);
+  transition: all 0.3s ease;
+}
+
+.start-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 4rpx 8rpx rgba(60, 197, 31, 0.3);
+}
+
+.continue-btn {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 15rpx;
+  padding: 30rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  box-shadow: 0 8rpx 16rpx rgba(52, 152, 219, 0.3);
+  transition: all 0.3s ease;
+}
+
+.continue-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 4rpx 8rpx rgba(52, 152, 219, 0.3);
+}
+
+/* 游戏特色 */
+.features-section {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 80rpx;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  padding: 20rpx;
+}
+
+.feature-icon {
+  font-size: 48rpx;
+  margin-bottom: 15rpx;
+}
+
+.feature-title {
+  display: block;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10rpx;
+}
+
+.feature-desc {
+  display: block;
+  font-size: 22rpx;
+  color: #cccccc;
+  line-height: 1.4;
+}
+
+/* 设置按钮 */
+.settings-section {
+  width: 100%;
+  max-width: 400rpx;
+}
+
+.settings-btn {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 15rpx;
+  padding: 25rpx;
+  font-size: 28rpx;
+  transition: all 0.3s ease;
+}
+
+.settings-btn:active {
+  transform: scale(0.95);
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}

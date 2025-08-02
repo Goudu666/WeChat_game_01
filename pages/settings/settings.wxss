@@ -1,0 +1,171 @@
+/* pages/settings/settings.wxss */
+.settings-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+  color: #ffffff;
+  padding: 20rpx;
+}
+
+/* 设置头部 */
+.settings-header {
+  text-align: center;
+  padding: 40rpx 0;
+  border-bottom: 2rpx solid #3cc51f;
+  margin-bottom: 40rpx;
+}
+
+.header-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* 设置列表 */
+.settings-list {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15rpx;
+  margin-bottom: 40rpx;
+  overflow: hidden;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1rpx solid rgba(255, 255, 255, 0.1);
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-info {
+  flex: 1;
+}
+
+.setting-label {
+  display: block;
+  font-size: 32rpx;
+  color: #ffffff;
+  margin-bottom: 8rpx;
+}
+
+.setting-desc {
+  display: block;
+  font-size: 24rpx;
+  color: #cccccc;
+}
+
+.setting-switch {
+  transform: scale(0.8);
+}
+
+.setting-slider {
+  width: 200rpx;
+}
+
+/* 数据管理 */
+.data-management {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15rpx;
+  margin-bottom: 40rpx;
+  overflow: hidden;
+}
+
+.section-title {
+  background: linear-gradient(135deg, #3cc51f 0%, #2ecc71 100%);
+  padding: 20rpx;
+  text-align: center;
+}
+
+.section-title text {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.management-buttons {
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.management-btn {
+  padding: 25rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+  border: none;
+}
+
+.backup-btn {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.restore-btn {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+}
+
+.reset-btn {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+/* 关于游戏 */
+.about-section {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15rpx;
+  margin-bottom: 40rpx;
+  overflow: hidden;
+}
+
+.about-content {
+  padding: 30rpx;
+  text-align: center;
+}
+
+.game-title {
+  display: block;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 15rpx;
+}
+
+.game-version {
+  display: block;
+  font-size: 24rpx;
+  color: #3cc51f;
+  margin-bottom: 20rpx;
+}
+
+.game-description {
+  display: block;
+  font-size: 28rpx;
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+/* 开发者信息 */
+.developer-info {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15rpx;
+  padding: 30rpx;
+  text-align: center;
+}
+
+.dev-title {
+  display: block;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 15rpx;
+}
+
+.dev-content {
+  display: block;
+  font-size: 24rpx;
+  color: #cccccc;
+  line-height: 1.6;
+}

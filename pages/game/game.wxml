@@ -1,0 +1,73 @@
+<!--pages/game/game.wxml-->
+<view class="game-container">
+  <!-- 游戏状态栏 -->
+  <view class="status-bar">
+    <view class="status-item">
+      <text class="status-label">等级</text>
+      <text class="status-value">{{character.level}}</text>
+    </view>
+    <view class="status-item">
+      <text class="status-label">经验</text>
+      <text class="status-value">{{character.experience}}/{{character.maxExperience}}</text>
+    </view>
+    <view class="status-item">
+      <text class="status-label">生命</text>
+      <text class="status-value">{{character.health}}/{{character.maxHealth}}</text>
+    </view>
+    <view class="status-item">
+      <text class="status-label">灵力</text>
+      <text class="status-value">{{character.mana}}/{{character.maxMana}}</text>
+    </view>
+  </view>
+
+  <!-- 场景背景 -->
+  <view class="scene-background" style="background-image: url('{{currentScene.background}}')">
+    <view class="scene-overlay">
+      <!-- 场景标题 -->
+      <view class="scene-title">
+        <text>{{currentScene.name}}</text>
+      </view>
+
+      <!-- 场景描述 -->
+      <view class="scene-description">
+        <text>{{currentScene.description}}</text>
+      </view>
+
+      <!-- 游戏选项 -->
+      <view class="game-options">
+        <view 
+          class="option-item" 
+          wx:for="{{currentScene.options}}" 
+          wx:key="action"
+          bindtap="selectOption"
+          data-action="{{item.action}}"
+        >
+          <text>{{item.text}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 快捷操作栏 -->
+  <view class="quick-actions">
+    <view class="action-btn" bindtap="showInventory">
+      <text>背包</text>
+    </view>
+    <view class="action-btn" bindtap="showCharacter">
+      <text>角色</text>
+    </view>
+    <view class="action-btn" bindtap="showSkills">
+      <text>技能</text>
+    </view>
+    <view class="action-btn" bindtap="showQuests">
+      <text>任务</text>
+    </view>
+  </view>
+
+  <!-- 消息提示 -->
+  <view class="message-log" wx:if="{{messages.length > 0}}">
+    <view class="message-item" wx:for="{{messages}}" wx:key="index">
+      <text>{{item}}</text>
+    </view>
+  </view>
+</view>

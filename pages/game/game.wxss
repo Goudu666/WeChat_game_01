@@ -1,0 +1,187 @@
+/* pages/game/game.wxss */
+.game-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+  color: #ffffff;
+}
+
+/* 状态栏样式 */
+.status-bar {
+  display: flex;
+  justify-content: space-around;
+  padding: 10rpx 20rpx;
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 2rpx solid #3cc51f;
+}
+
+.status-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status-label {
+  font-size: 24rpx;
+  color: #cccccc;
+  margin-bottom: 5rpx;
+}
+
+.status-value {
+  font-size: 28rpx;
+  color: #3cc51f;
+  font-weight: bold;
+}
+
+/* 场景背景样式 */
+.scene-background {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.scene-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+
+/* 场景标题 */
+.scene-title {
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.scene-title text {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 2rpx 2rpx 4rpx rgba(0, 0, 0, 0.8);
+}
+
+/* 场景描述 */
+.scene-description {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.scene-description text {
+  font-size: 32rpx;
+  line-height: 1.6;
+  color: #ffffff;
+  text-shadow: 1rpx 1rpx 2rpx rgba(0, 0, 0, 0.8);
+}
+
+/* 游戏选项 */
+.game-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.option-item {
+  background: linear-gradient(135deg, #3cc51f 0%, #2ecc71 100%);
+  border-radius: 15rpx;
+  padding: 25rpx 30rpx;
+  text-align: center;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.option-item:active {
+  transform: scale(0.95);
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.3);
+}
+
+.option-item text {
+  font-size: 32rpx;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* 快捷操作栏 */
+.quick-actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 20rpx;
+  background: rgba(0, 0, 0, 0.9);
+  border-top: 2rpx solid #3cc51f;
+}
+
+.action-btn {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+  border-radius: 10rpx;
+  padding: 15rpx 25rpx;
+  text-align: center;
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.action-btn text {
+  font-size: 28rpx;
+  color: #ffffff;
+}
+
+/* 消息日志 */
+.message-log {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  max-width: 400rpx;
+  max-height: 300rpx;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10rpx;
+  padding: 15rpx;
+}
+
+.message-item {
+  margin-bottom: 10rpx;
+  padding: 10rpx;
+  background: rgba(60, 197, 31, 0.2);
+  border-radius: 5rpx;
+  border-left: 4rpx solid #3cc51f;
+}
+
+.message-item text {
+  font-size: 24rpx;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+/* 响应式设计 */
+@media (max-width: 750rpx) {
+  .scene-overlay {
+    padding: 20rpx;
+  }
+  
+  .scene-title text {
+    font-size: 40rpx;
+  }
+  
+  .scene-description text {
+    font-size: 28rpx;
+  }
+  
+  .option-item text {
+    font-size: 28rpx;
+  }
+}

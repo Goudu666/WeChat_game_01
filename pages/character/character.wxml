@@ -1,0 +1,130 @@
+<!--pages/character/character.wxml-->
+<view class="character-container">
+  <!-- 角色头像和基本信息 -->
+  <view class="character-header">
+    <view class="avatar-section">
+      <image class="avatar" src="/images/avatar.png" mode="aspectFill"></image>
+      <view class="level-badge">{{character.level}}</view>
+    </view>
+    <view class="basic-info">
+      <text class="character-name">{{character.name}}</text>
+      <text class="cultivation-level">{{character.cultivation}}</text>
+    </view>
+  </view>
+
+  <!-- 属性面板 -->
+  <view class="stats-panel">
+    <view class="panel-title">
+      <text>角色属性</text>
+    </view>
+    
+    <view class="stats-grid">
+      <view class="stat-item">
+        <text class="stat-label">力量</text>
+        <text class="stat-value">{{character.strength}}</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-label">敏捷</text>
+        <text class="stat-value">{{character.agility}}</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-label">智力</text>
+        <text class="stat-value">{{character.intelligence}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 状态面板 -->
+  <view class="status-panel">
+    <view class="panel-title">
+      <text>当前状态</text>
+    </view>
+    
+    <view class="status-item">
+      <text class="status-label">生命值</text>
+      <view class="progress-bar">
+        <view class="progress-fill health-fill" style="width: {{character.health/character.maxHealth*100}}%"></view>
+      </view>
+      <text class="status-value">{{character.health}}/{{character.maxHealth}}</text>
+    </view>
+    
+    <view class="status-item">
+      <text class="status-label">灵力值</text>
+      <view class="progress-bar">
+        <view class="progress-fill mana-fill" style="width: {{character.mana/character.maxMana*100}}%"></view>
+      </view>
+      <text class="status-value">{{character.mana}}/{{character.maxMana}}</text>
+    </view>
+    
+    <view class="status-item">
+      <text class="status-label">经验值</text>
+      <view class="progress-bar">
+        <view class="progress-fill exp-fill" style="width: {{character.experience/character.maxExperience*100}}%"></view>
+      </view>
+      <text class="status-value">{{character.experience}}/{{character.maxExperience}}</text>
+    </view>
+  </view>
+
+  <!-- 装备面板 -->
+  <view class="equipment-panel">
+    <view class="panel-title">
+      <text>装备</text>
+    </view>
+    
+    <view class="equipment-grid">
+      <view class="equipment-slot">
+        <text class="slot-label">武器</text>
+        <view class="equipment-item" wx:if="{{character.equipment.weapon}}">
+          <text>{{character.equipment.weapon.name}}</text>
+        </view>
+        <view class="empty-slot" wx:else>
+          <text>空</text>
+        </view>
+      </view>
+      
+      <view class="equipment-slot">
+        <text class="slot-label">护甲</text>
+        <view class="equipment-item" wx:if="{{character.equipment.armor}}">
+          <text>{{character.equipment.armor.name}}</text>
+        </view>
+        <view class="empty-slot" wx:else>
+          <text>空</text>
+        </view>
+      </view>
+      
+      <view class="equipment-slot">
+        <text class="slot-label">饰品</text>
+        <view class="equipment-item" wx:if="{{character.equipment.accessory}}">
+          <text>{{character.equipment.accessory.name}}</text>
+        </view>
+        <view class="empty-slot" wx:else>
+          <text>空</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 技能面板 -->
+  <view class="skills-panel">
+    <view class="panel-title">
+      <text>技能</text>
+    </view>
+    
+    <view class="skills-list" wx:if="{{character.skills.length > 0}}">
+      <view class="skill-item" wx:for="{{character.skills}}" wx:key="id">
+        <text class="skill-name">{{item.name}}</text>
+        <text class="skill-level">Lv.{{item.level}}</text>
+      </view>
+    </view>
+    
+    <view class="no-skills" wx:else>
+      <text>暂无技能</text>
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="action-buttons">
+    <button class="action-btn" bindtap="changeName">修改姓名</button>
+    <button class="action-btn" bindtap="resetCharacter">重置角色</button>
+  </view>
+</view>
