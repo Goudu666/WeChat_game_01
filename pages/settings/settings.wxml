@@ -1,0 +1,84 @@
+<!--pages/settings/settings.wxml-->
+<view class="settings-container">
+  <!-- 设置标题 -->
+  <view class="settings-header">
+    <text class="header-title">游戏设置</text>
+  </view>
+
+  <!-- 设置选项 -->
+  <view class="settings-list">
+    <!-- 音效设置 -->
+    <view class="setting-item">
+      <view class="setting-info">
+        <text class="setting-label">音效</text>
+        <text class="setting-desc">开启或关闭游戏音效</text>
+      </view>
+      <switch class="setting-switch" checked="{{soundEnabled}}" bindchange="toggleSound"></switch>
+    </view>
+
+    <!-- 背景音乐 -->
+    <view class="setting-item">
+      <view class="setting-info">
+        <text class="setting-label">背景音乐</text>
+        <text class="setting-desc">开启或关闭背景音乐</text>
+      </view>
+      <switch class="setting-switch" checked="{{musicEnabled}}" bindchange="toggleMusic"></switch>
+    </view>
+
+    <!-- 自动保存 -->
+    <view class="setting-item">
+      <view class="setting-info">
+        <text class="setting-label">自动保存</text>
+        <text class="setting-desc">自动保存游戏进度</text>
+      </view>
+      <switch class="setting-switch" checked="{{autoSave}}" bindchange="toggleAutoSave"></switch>
+    </view>
+
+    <!-- 文字速度 -->
+    <view class="setting-item">
+      <view class="setting-info">
+        <text class="setting-label">文字速度</text>
+        <text class="setting-desc">调整文字显示速度</text>
+      </view>
+      <slider class="setting-slider" min="0.5" max="2" step="0.1" value="{{textSpeed}}" bindchange="changeTextSpeed"></slider>
+    </view>
+  </view>
+
+  <!-- 游戏数据管理 -->
+  <view class="data-management">
+    <view class="section-title">
+      <text>数据管理</text>
+    </view>
+    
+    <view class="management-buttons">
+      <button class="management-btn backup-btn" bindtap="backupGameData">
+        <text>备份游戏数据</text>
+      </button>
+      <button class="management-btn restore-btn" bindtap="restoreGameData">
+        <text>恢复游戏数据</text>
+      </button>
+      <button class="management-btn reset-btn" bindtap="resetGameData">
+        <text>重置游戏数据</text>
+      </button>
+    </view>
+  </view>
+
+  <!-- 关于游戏 -->
+  <view class="about-section">
+    <view class="section-title">
+      <text>关于游戏</text>
+    </view>
+    
+    <view class="about-content">
+      <text class="game-title">修仙文字冒险</text>
+      <text class="game-version">版本 1.0.0</text>
+      <text class="game-description">一款中式修仙主题的文字冒险游戏，体验修仙世界的奇妙冒险。</text>
+    </view>
+  </view>
+
+  <!-- 开发者信息 -->
+  <view class="developer-info">
+    <text class="dev-title">开发者信息</text>
+    <text class="dev-content">本游戏为教学演示项目，展示了微信小程序游戏开发的基本框架和功能。</text>
+  </view>
+</view>

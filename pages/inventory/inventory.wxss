@@ -1,0 +1,308 @@
+/* pages/inventory/inventory.wxss */
+.inventory-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+  color: #ffffff;
+}
+
+/* 背包头部 */
+.inventory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 2rpx solid #3cc51f;
+}
+
+.header-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.item-count {
+  font-size: 24rpx;
+  color: #cccccc;
+}
+
+/* 分类标签 */
+.category-tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20rpx;
+  gap: 10rpx;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 15rpx;
+  border-radius: 10rpx;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.tab-item.active {
+  background: linear-gradient(135deg, #3cc51f 0%, #2ecc71 100%);
+}
+
+.tab-item text {
+  font-size: 28rpx;
+  color: #ffffff;
+}
+
+/* 物品列表 */
+.inventory-list {
+  padding: 20rpx;
+}
+
+.inventory-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  margin-bottom: 15rpx;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15rpx;
+  border-left: 6rpx solid #3cc51f;
+  transition: all 0.3s ease;
+}
+
+.inventory-item:active {
+  transform: scale(0.98);
+}
+
+.inventory-item.common {
+  border-left-color: #95a5a6;
+}
+
+.inventory-item.rare {
+  border-left-color: #3498db;
+}
+
+.inventory-item.epic {
+  border-left-color: #9b59b6;
+}
+
+.inventory-item.legendary {
+  border-left-color: #f39c12;
+}
+
+/* 物品图标 */
+.item-icon {
+  width: 80rpx;
+  height: 80rpx;
+  background: linear-gradient(135deg, #3cc51f 0%, #2ecc71 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20rpx;
+}
+
+.icon-text {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* 物品信息 */
+.item-info {
+  flex: 1;
+}
+
+.item-name {
+  display: block;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 8rpx;
+}
+
+.item-description {
+  display: block;
+  font-size: 24rpx;
+  color: #cccccc;
+  margin-bottom: 8rpx;
+  line-height: 1.4;
+}
+
+.item-stats {
+  display: flex;
+  gap: 20rpx;
+}
+
+.item-stats text {
+  font-size: 22rpx;
+  color: #3cc51f;
+}
+
+/* 物品操作 */
+.item-actions {
+  display: flex;
+  gap: 10rpx;
+}
+
+.action-btn {
+  padding: 10rpx 15rpx;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  color: #ffffff;
+  border: none;
+}
+
+.use-btn {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+}
+
+.equip-btn {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.drop-btn {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+/* 空背包提示 */
+.empty-inventory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100rpx 40rpx;
+  text-align: center;
+}
+
+.empty-inventory text {
+  font-size: 28rpx;
+  color: #cccccc;
+  margin-bottom: 10rpx;
+}
+
+/* 物品详情弹窗 */
+.item-detail-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 80%;
+  max-width: 600rpx;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  background: linear-gradient(135deg, #3cc51f 0%, #2ecc71 100%);
+}
+
+.modal-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.close-btn {
+  width: 60rpx;
+  height: 60rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn text {
+  font-size: 40rpx;
+  color: #ffffff;
+}
+
+.modal-body {
+  padding: 30rpx;
+  display: flex;
+  align-items: flex-start;
+}
+
+.item-detail-icon {
+  width: 120rpx;
+  height: 120rpx;
+  background: linear-gradient(135deg, #3cc51f 0%, #2ecc71 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30rpx;
+}
+
+.item-detail-icon .icon-text {
+  font-size: 48rpx;
+}
+
+.item-detail-info {
+  flex: 1;
+}
+
+.detail-description {
+  display: block;
+  font-size: 28rpx;
+  color: #ffffff;
+  line-height: 1.6;
+  margin-bottom: 20rpx;
+}
+
+.detail-stats {
+  margin-bottom: 20rpx;
+}
+
+.detail-stats text {
+  display: block;
+  font-size: 24rpx;
+  color: #3cc51f;
+  margin-bottom: 8rpx;
+}
+
+.detail-rarity {
+  font-size: 24rpx;
+  color: #cccccc;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 15rpx;
+  padding: 30rpx;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.modal-btn {
+  flex: 1;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+  border: none;
+}
+
+.modal-btn.use-btn {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+}
+
+.modal-btn.equip-btn {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.modal-btn.drop-btn {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}

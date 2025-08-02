@@ -1,0 +1,127 @@
+<!--pages/inventory/inventory.wxml-->
+<view class="inventory-container">
+  <!-- 背包标题 -->
+  <view class="inventory-header">
+    <text class="header-title">背包</text>
+    <text class="item-count">物品数量: {{inventory.length}}/50</text>
+  </view>
+
+  <!-- 物品分类标签 -->
+  <view class="category-tabs">
+    <view 
+      class="tab-item {{currentCategory === 'all' ? 'active' : ''}}" 
+      bindtap="switchCategory" 
+      data-category="all"
+    >
+      <text>全部</text>
+    </view>
+    <view 
+      class="tab-item {{currentCategory === 'weapon' ? 'active' : ''}}" 
+      bindtap="switchCategory" 
+      data-category="weapon"
+    >
+      <text>武器</text>
+    </view>
+    <view 
+      class="tab-item {{currentCategory === 'consumable' ? 'active' : ''}}" 
+      bindtap="switchCategory" 
+      data-category="consumable"
+    >
+      <text>消耗品</text>
+    </view>
+    <view 
+      class="tab-item {{currentCategory === 'material' ? 'active' : ''}}" 
+      bindtap="switchCategory" 
+      data-category="material"
+    >
+      <text>材料</text>
+    </view>
+  </view>
+
+  <!-- 物品列表 -->
+  <view class="inventory-list">
+    <view 
+      class="inventory-item {{item.rarity}}" 
+      wx:for="{{filteredInventory}}" 
+      wx:key="id"
+      bindtap="selectItem"
+      data-item="{{item}}"
+    >
+      <view class="item-icon">
+        <text class="icon-text">{{item.name.charAt(0)}}</text>
+      </view>
+      <view class="item-info">
+        <text class="item-name">{{item.name}}</text>
+        <text class="item-description">{{item.description}}</text>
+        <view class="item-stats" wx:if="{{item.attack || item.effect}}">
+          <text wx:if="{{item.attack}}">攻击力: {{item.attack}}</text>
+          <text wx:if="{{item.effect}}">效果: {{item.effect.health ? '恢复生命' : ''}}{{item.effect.mana ? '恢复灵力' : ''}}</text>
+        </view>
+      </view>
+      <view class="item-actions">
+        <view class="action-btn use-btn" bindtap="useItem" data-item="{{item}}" wx:if="{{item.type === 'consumable'}}">
+          <text>使用</text>
+        </view>
+        <view class="action-btn equip-btn" bindtap="equipItem" data-item="{{item}}" wx:if="{{item.type === 'weapon'}}">
+          <text>装备</text>
+        </view>
+        <view class="action-btn drop-btn" bindtap="dropItem" data-item="{{item}}">
+          <text>丢弃</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空背包提示 -->
+  <view class="empty-inventory" wx:if="{{filteredInventory.length === 0}}">
+    <text>背包空空如也...</text>
+    <text>去探索世界寻找物品吧！</text>
+  </view>
+
+  <!-- 物品详情弹窗 -->
+  <view class="item-detail-modal" wx:if="{{selectedItem}}" bindtap="closeItemDetail">
+    <view class="modal-content" catchtap="stopPropagation">
+      <view class="modal-header">
+        <text class="modal-title">{{selectedItem.name}}</text>
+        <view class="close-btn" bindtap="closeItemDetail">
+          <text>×</text>
+        </view>
+      </view>
+      
+      <view class="modal-body">
+        <view class="item-detail-icon">
+          <text class="icon-text">{{selectedItem.name.charAt(0)}}</text>
+        </view>
+        
+        <view class="item-detail-info">
+          <text class="detail-description">{{selectedItem.description}}</text>
+          
+          <view class="detail-stats">
+            <text wx:if="{{selectedItem.attack}}">攻击力: {{selectedItem.attack}}</text>
+            <text wx:if="{{selectedItem.durability}}">耐久度: {{selectedItem.durability}}</text>
+            <text wx:if="{{selectedItem.effect}}">
+              效果: 
+              <text wx:if="{{selectedItem.effect.health}}">恢复生命 {{selectedItem.effect.health}} 点</text>
+              <text wx:if="{{selectedItem.effect.mana}}">恢复灵力 {{selectedItem.effect.mana}} 点</text>
+            </text>
+            <text wx:if="{{selectedItem.value}}">价值: {{selectedItem.value}} 灵石</text>
+          </view>
+          
+          <text class="detail-rarity">稀有度: {{selectedItem.rarity}}</text>
+        </view>
+      </view>
+      
+      <view class="modal-actions">
+        <button class="modal-btn use-btn" bindtap="useItem" data-item="{{selectedItem}}" wx:if="{{selectedItem.type === 'consumable'}}">
+          使用
+        </button>
+        <button class="modal-btn equip-btn" bindtap="equipItem" data-item="{{selectedItem}}" wx:if="{{selectedItem.type === 'weapon'}}">
+          装备
+        </button>
+        <button class="modal-btn drop-btn" bindtap="dropItem" data-item="{{selectedItem}}">
+          丢弃
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

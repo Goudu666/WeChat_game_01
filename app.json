@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/game/game",
+    "pages/inventory/inventory",
+    "pages/character/character",
+    "pages/settings/settings"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2c3e50",
+    "navigationBarTitleText": "修仙文字冒险",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#1a1a1a"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/game/game",
+        "iconPath": "images/game.png",
+        "selectedIconPath": "images/game-active.png",
+        "text": "游戏"
+      },
+      {
+        "pagePath": "pages/character/character",
+        "iconPath": "images/character.png",
+        "selectedIconPath": "images/character-active.png",
+        "text": "角色"
+      },
+      {
+        "pagePath": "pages/inventory/inventory",
+        "iconPath": "images/inventory.png",
+        "selectedIconPath": "images/inventory-active.png",
+        "text": "背包"
+      },
+      {
+        "pagePath": "pages/settings/settings",
+        "iconPath": "images/settings.png",
+        "selectedIconPath": "images/settings-active.png",
+        "text": "设置"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
